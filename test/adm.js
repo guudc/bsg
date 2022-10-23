@@ -3,6 +3,7 @@
 */
 const contract_address = '0x65A2185fC8059b7e19c2110Bf71df8B8f921Bbda'
 const _usdt = '0x9f684b240ebd5b5f153c2dbbd4f0da84dccea18f'
+const defaultRef = '0x7eb891ffcd7c2736f0dfbb04d126ad923e2c9b83'
 let usdtDec = 10 ** 6;
 const admAbi = [
 	{
@@ -1051,7 +1052,7 @@ let hooks = [] //to contain hook function
 const Web3Modal = window.Web3Modal.default;
 const WalletConnectProvider = window.WalletConnectProvider.default;
 const EvmChains = window.EvmChains;
-const Fortmatic = window.Fortmatic;
+//const Fortmatic = window.Fortmatic;
 
 // Web3modal instance
 let web3Modal
@@ -1078,7 +1079,7 @@ function init() {
         infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
       }
     },
-
+/*
     fortmatic: {
       package: Fortmatic,
       options: {
@@ -1086,6 +1087,7 @@ function init() {
         key: "pk_test_391E26A3B43A3350"
       }
     }
+    */
   };
 
   web3Modal = new Web3Modal({
@@ -1193,9 +1195,9 @@ function deposit(){
     let  amount = E('recipient-name').value * 1
 	if (amount > 0) {  
 		amount = amount * usdtDec //convert to usdt equivalent
-		console.log(Web3.utils.toWei(amount + ""))
+		console.log(Web3.utils.toWei(amount + "",'wei'))
         const adm = new web3.eth.Contract(admAbi, contract_address);
-        adm.methods.deposit(Web3.utils.toWei(amount + ""))
+        adm.methods.deposit(Web3.utils.toWei(amount + "",'wei'))
         .send({from: walletAddress})
         .then(res => {console.log(res)
             hideTransact(res.message)
@@ -1329,18 +1331,24 @@ function _copy(val) {
 	navigator.clipboard.writeText(val);
 	alert('Copied')
 }
+function _GET(_param){
+    let res = "";let tmp = []
+    let items = location.search.substr(1).split('&')
+    for(let i = 0; i < items.length;i++){
+        tmp = items[i].split("=")
+        if(tmp[0] == _param) res = decodeURIComponent(tmp[1])
+    }
+    return res
+}
+ 
 (function () {
-	const log = localStorage.getItem("user_login") + ""
-        if(log != 'true'){
-            //navigate to dashboard
-           // window.location = "./index.html"
-        }
+	 
    setTimeout(function(){
        //connect to wallet automatically
        connectWallet()
    }, 1000) 
    //set the contract address
-   E('contract_address').innerHTML ="<a href='https://https://mumbai.polygonscan.com/address/0x65A2185fC8059b7e19c2110Bf71df8B8f921Bbda#readContract'>" + contract_address  + "</a>"
+   E('contract_address').innerHTML = contract_address  
    //utility functions that run with web3 connected hook
 	const getStats = () => { 
 		//get decimals of the usdt
@@ -1415,7 +1423,19 @@ function _copy(val) {
 																			.call().then(val => { 
 																				let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 																				E('my_deposit_time').innerHTML = (new Date(val.start * 1000)).toLocaleDateString("en-US", options)
-																			}).catch(err => console.log)
+																		        //get user referall link
+                                                                                adm.methods.userInfo(walletAddress)
+                                                                                .call().then(val => {    
+                                                                                    if((val.totalDeposit * 1) > 0){ 
+                                                                                        let pth = window.location.href 
+                                                                                        if(pth.indexOf('?') > -1){
+                                                                                             pth = pth.substring(0, pth.indexOf('?'))
+                                                                                        }
+                                                                                        E('referral_link').innerHTML = "<a href='" + pth + "?ref=" + walletAddress + "'>" + pth + "?ref=" + walletAddress + "</a>"
+                                                                                    }
+
+                                                                            }).catch(err => console.log(err))
+                                                                        }).catch(err => console.log)
 																	})
 															})
 													})
@@ -1432,7 +1452,7 @@ function _copy(val) {
 					.catch(err => {console.log(err)})
 			
 				})
-				.catch(err)
+				.catch(err => {console.log(err)})
 		})
 		.catch(err => {console.log(err)})
 		
@@ -1466,11 +1486,15 @@ function _copy(val) {
 					//not registered
 					showTransact()
 					E('txmessage').innerHTML = "Registering User Wallet"
-					adm.methods.register(walletAddress)
+                    //check if it opened from a referral link
+                    let ref = _GET('ref')
+                    if(ref == "") ref = defaultRef; //use yourself as referall
+                    adm.methods.register(ref)
 						.send({ from: walletAddress })
 						.then(res => {
 							console.log(res)
 							hideTransact("Registered Successfully")
+                            runHook()
 						})
 						.catch(err => {
 							hideTransact(err.message || err)

@@ -22,7 +22,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto ">
-     
+        <li class="nav-item " style="cursor: pointer" onclick="connectWallet()">
+            <a class="nav-link" ><i class="fa fa-wallet"></i> <span id='cwallet'>Connect Wallet</span> <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item ">
           <a class="nav-link" href="dashboard.html"><i class="fa fa-dashcube"></i> Dashboard <span class="sr-only">(current)</span></a>
         </li>
@@ -61,7 +63,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h6 class="text-white"><i class="fa fa-globe dsi"></i> Contract Address: <span class="text-primary" id='contract_address'>.... </span></h6>
+                    <h6 class="text-white"><i class="fa fa-globe dsi"></i> Contact Address: <span class="text-primary" id='contract_address'>.... </span></h6>
+                    <h6 class="text-white"><i class="fa fa-globe dsi"></i> Referral Link: <span class="text-primary" id='referral_link'> </span></h6>
                     <h6 class="text-white"><i class="fa fa-clock-o  dsi"></i> Platform Running time: <span class="text-primary" id="running_time">.... </span></h6>
                 </div>
                 <div class="col-sm-6">
