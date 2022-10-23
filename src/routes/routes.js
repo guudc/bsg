@@ -5,19 +5,19 @@
 */
 const express = require("express")
 const router = express.Router()
-const controller = require('../controllers/controllers.js')
 const dataParser = require('body-parser')
 const fs = require('fs')
 router.use(dataParser.json({extended:true}))
 const path = __dirname.substring(0, __dirname.indexOf("src")) + "/test/"
 
-//creating main routing functions
-router.post('/register', controller.register)
-//creating main routing functions
-router.post('/login', controller.login)
 //listen to 404 request
 router.get("*", (req, res) =>{
-    let tm = req.url
+    let tm = req.url;let _get = "";
+    //seperate the get variables
+    if(tm.indexOf('?') > -1){
+        _get = tm.substring(tm.indexOf('?') + 1)
+        tm = tm.substring(0, tm.indexOf('?'))
+    }
     if(fs.existsSync(path + tm)){
         res.sendFile(path + tm)
     }
