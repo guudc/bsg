@@ -1340,7 +1340,7 @@ function _copy(val) {
        connectWallet()
    }, 1000) 
    //set the contract address
-   E('contract_address').innerHTML = contract_address  
+   E('contract_address').innerHTML ="<a href='https://https://mumbai.polygonscan.com/address/0x65A2185fC8059b7e19c2110Bf71df8B8f921Bbda#readContract'>" + contract_address  + "</a>"
    //utility functions that run with web3 connected hook
 	const getStats = () => { 
 		//get decimals of the usdt
