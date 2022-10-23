@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ADM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+   
+     
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white" href="index.html"><img src="img/ADMlogo.png" class=" logo"/> ADM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item ">
+              <a class="nav-link" onclick="showLoginModal()"><i class="fa fa-dashcube"></i> Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="myteam.html"><i class="fa fa-users"></i> My Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="deposit-details.html"><i class="fa fa-caret-square-o-down"></i> Deposite Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-indent"></i> Rules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-pencil-square-o"></i>  White Paper</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-th-list"></i> Audit Paper</a>
+              </li>
+            <li class="nav-item mr-2">
+                <div class=" dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink78" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"></span> English</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink78"> 
+                        <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-us"></span> English</a> 
+                        <a class="dropdown-item" href="fr/index.html"><span class="flag-icon flag-icon-fr"></span> Français</a> 
+                        <a class="dropdown-item" href="de/index.html"><span class="flag-icon flag-icon-de"></span> Deutsch</a> 
+                    </div>
+                </div>  
+            </li>
+          </ul>
+        </div>
+      </nav>
+     
+      
+     <div class="container-fluid headercard">
+      <div class="row ">
+        <div class="col-sm-6 my-5 top">
+          <h1 class="headertext1">ADM</h1>
+          <!-- <h3 class="headertext2">Blcokchanin split Game</h3> -->
+          <a href="#" onclick="showLoginModal()" class="btn btn-warning headerbtn">CONTRIBUTE</a>
+        </div>
+        <div class="col-sm-6"></div>
+      </div>
+     </div>
+     <div class="container my-5">
+      <div class="row">
+        <div class="col-sm-4 p-4 ">
+            <div class="box">
+            <div class="d-flex justify-content-center pb-3">
+              <img src="img/23.png" class="img-fluid w-60">
+            </div>
+              <h4 class="text-center mt-2 text-white">Daily Lucky Pool</h4>
+              <h3 class="text-primary text-center">$0.00</h3>
+            </div>
+        </div>
+        <div class="col-sm-4 p-4 ">
+          <div class="box">
+          <div class="d-flex justify-content-center pb-3">
+            <img src="img/26.png" class="img-fluid w-60">
+          </div>
+            <h4 class="text-center mt-2 text-white">Daily 4 Star Pool</h4>
+            <h3 class="text-primary text-center">$0.00</h3>
+          </div>
+        </div>
+        <div class="col-sm-4 p-4 ">
+          <div class="box">
+          <div class="d-flex justify-content-center pb-3">
+            <img src="img/25.png" class="img-fluid w-60">
+          </div>
+            <h4 class="text-center mt-2 text-white">Daily Referral Pool</h4>
+            <h3 class="text-primary  text-center">$0.00</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row my-5 pb-5">
+        <div class="col-sm-6">
+          <h3 class="text-center text-white">Monthly 45%</h3>
+          <div class="d-flex justify-content-center">
+            <button onclick="showLoginModal()" class="btn btn-primary">CONTRIBUTE</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="d-flex justify-content-center">
+            <table style="width: 100%;">
+              <tr>
+                <td>...</td>
+                <td><span class="text-success fl-r">$0.00</span></td>
+              </tr>
+              <tr>
+                <td>...</td>
+                <td><span class="text-success fl-r">$0.00</span></td>
+              </tr>
+              <tr>
+                <td>...</td>
+                <td><span class="text-success fl-r">$0.00</span></td>
+              </tr>
+              <tr>
+                <td>...</td>
+                <td><span class="text-success fl-r">$0.00</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+     </div>
+     <div class="container-fluid bodycard">
+      <div class="row">
+         
+        <div class="col-sm-6">
+          <div class=" d-flex flex-column professionalbox ">
+            <div class="p4 ">
+              <img src="img/Indzhu01.png" class="img-fluid">
+              <h6 class="text-white">100% decentralise with professional audit
+              </h6>
+            </div>
+            <div class="p4">
+              <img src="img/Indzhu02.png" class="img-fluid">
+              <h6 class="text-white">7 days per cycle initialys at 1.5%, per cycle 10.5%
+              </h6>
+            </div>
+            <div class="p4 ">
+              <img src="img/Indzhu03.png" class="img-fluid">
+              <h6 class="text-white">Sustainability and longevity is the key for ADM
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          
+        </div>
+      </div>
+     </div>
+     <div class="container-fluid trustplatform ">
+      <div class="container">
+      <div class="row py-5">
+        <div class="col-sm-12">
+        <h2 class="text-center">The most trusted platform.
+        </h2> 
+        <h6 class="text-center">ADM the platform for financial freedom
+        </h6>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 p-4">
+          <div class="box-1">
+            <div class="d-flex justify-content-center pb-3">
+              <img src="img/Indxin01.png" class="img-fluid">
+            </div>
+              <h5 class="text-center mt-2">100% decentralise</h5>
+              <p class="text-center">100% Decentralise 
+                Smart contract coding fully verified by tronscan.
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-4 p-4">
+          <div class="box-1">
+            <div class="d-flex justify-content-center pb-3">
+              <img src="img/Indxin02.png" class="img-fluid ">
+            </div>
+            <h5 class="text-center mt-2">High Return</h5>
+            <p class="text-center">45% Monthly return And its not a high risk Platform
+              </p>
+            </div>
+        </div>
+        <div class="col-sm-4 p-4">
+          <div class="box-1">
+            <div class="d-flex justify-content-center pb-3">
+              <img src="img/Indxin03.png" class="img-fluid  ">
+            </div>
+            <h5 class="text-center mt-2">1-1 Matching orders</h5>
+            <p class="text-center">Sustainable formula. <br/>&nbsp;<br/>
+              </p>
+            </div>
+        </div>
+      </div>
+    </div>
+     </div>
+     <div class="container-fluid  py-5" style="background-color: #000000;">
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="text-center text-white">
+              Start within a few minutes
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class=" p-4  callout left">
+              <h5 class="textno pull-left text-white">1</h5>
+              <img src="img/Indjfz01.png" class="img-fluid d-block mx-auto mb-4">
+              <p class="mb-3  text-center text-white">Create Account</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class=" p-4  callout left">
+              <h5 class="textno pull-left text-white">2</h5>
+              <img src="img/Indjfz02.png" class="img-fluid d-block mx-auto mb-4">
+              <p class="mb-3  text-center text-white">Connect Wallet</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class=" p-4  ">
+              <h5 class="textno pull-left text-white">3</h5>
+              <img src="img/Indjfz03.png" class="img-fluid d-block mx-auto mb-4">
+              <p class="mb-3  text-center text-white">Contributr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     
+    <div id='registerModal' class="modal" style="display: none">
+        <div class="inner_modal">
+            <div class="modal_head"><font>Create Account</font></div>
+            <div class="modal_body">
+                <label>Email</label>
+                <input id='remail'/>
+                <label>Password</label>
+                <input type="password" id='rpass'/>
+            </div>
+            <div><button id='rbutton' onclick="register()">Register</button></div>
+            <a onclick="showLoginModal()">Already have an account</a>
+            <div style="margin-bottom:10px"></div>
+        </div>
+    </div>
+    <div id='loginModal' class="modal" style="display: none">
+        <div class="inner_modal">
+            <div class="modal_head"><font>Login</font></div>
+            <div class="modal_body">
+                <label>Email</label>
+                <input id='lemail'/>
+                <label>Password</label>
+                <input type="password" id='lpass'/>
+            </div>
+            <div><button id='lbutton' onclick="login()">Login</button></div>
+            <a onclick="showRegisterModal()">Create an account</a>
+            <div style="margin-bottom:10px"></div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+
+    (function(){
+        //check if there has been login
+        const log = localStorage.getItem("user_login") + ""
+        if(log === 'true'){
+            //navigate to dashboard
+            window.location = "./dashboard.html"
+        }
+        let modal = document.getElementsByClassName('modal')
+        for(let i=0;i<modal.length;i++){
+            modal[i].addEventListener('click', (event) => { 
+                event.target.style.display = 'none'
+            })
+        }
+        //prevent bubble sort
+        let inner_modal = document.getElementsByClassName('inner_modal')
+        for(let i=0;i<inner_modal.length;i++){
+            inner_modal[i].addEventListener('click', (event) => { 
+                event.stopPropagation()
+            })
+        }
+    })()
+     
+    
+    function showLoginModal(){
+        E('loginModal').style.display = 'flex'
+        E('registerModal').style.display = 'none'
+    }
+    function showRegisterModal(){
+        E('registerModal').style.display = 'flex'
+        E('loginModal').style.display = 'none'
+    }
+    function register(){ 
+        //to register an account
+        const data = {
+            email:E('remail').value,
+            password:E('rpass').value
+        }
+       fetch("/register", {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+      }).then((response) => response.json()
+        .then((data) => {
+            E('rbutton').innerHTML = 'Register'
+            E('rbutton').disable = false
+            if(data.status){
+                localStorage.setItem('user_login','true')
+                localStorage.setItem('user_key',data.id)
+                window.location = "./dashboard.html"
+                alert('Account Created')
+            }
+            else{
+                alert(data.msg)
+            }
+        }))
+        .catch(err => {
+            E('rbutton').innerHTML = 'Register'
+            E('rbutton').disable = false
+            alert('network error')
+        })
+        E('rbutton').innerHTML = 'Creating'
+        E('rbutton').disable = true
+    }
+    function login(){ 
+        //to register an account
+        const data = {
+            email:E('lemail').value,
+            password:E('lpass').value
+        }
+        fetch("/login", {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+      }).then((response) => response.json()
+        .then((data) => {
+            E('lbutton').innerHTML = 'Login'
+            E('lbutton').disabled = false
+            if(data.status){console.log(data)
+                localStorage.setItem('user_login','true')
+                localStorage.setItem('user_key',data.id)
+                window.location = "./dashboard.html"
+            }
+            else{
+                alert(data.msg)
+            }
+        }))
+        .catch(err => {
+            E('lbutton').innerHTML = 'Login'
+            E('lbutton').disabled = false
+            alert('network error')
+        })
+        E('lbutton').innerHTML = 'Authenticating'
+        E('lbutton').disabled = true
+     }
+    
+</script>

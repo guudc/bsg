@@ -1,0 +1,78 @@
+READ ME
+ 
+Deploy Smart contracts
+    
+    go to src/contracts to deploy neccesary contracts
+    configure data.js with neccesary parametres
+    
+Build the package
+   
+   run npm install
+
+Start the server
+    
+    node server.js
+
+
+Api gateway
+
+
+/pay
+    To create a payment
+    expected json data (All required)
+        name, city, country, line1, postal, district  
+        email , phone, session, ip , month, year 
+        cvv, cardNo, amount
+        success(url after succesfull otp verification),
+        failure(url after failing otp verification),
+        
+    Note: The api would use default test data if any of this data is not provided
+    thus resulting in false payment
+    
+    Expected result can be found in results.txt
+    
+/verifypay
+    To verify a payment
+    Expected json data
+    id (the id of the payment, this is gotten from the /pay)
+    
+    
+How to make payments
+
+    Make an APi call to /pay
+    Check if requiredAction is present in the result, if it is not poll
+    /verifypay till it is present. The redirectUrl is the url to the bank otp page, redirect the users
+    to there for 3D authentication
+    After verfication, poll /verifypay untill payment status cahnges to waiting_completion
+    Make an API call to /finishpayment to finalize payment
+    
+    
+How to make a swap
+
+    Make an API call /swap to initiate swap
+    Poll /getswap to check swap status
+    Swap is complete when status is equal to complete, view transaction via the tx field
+    
+How to get user balance
+
+    Make an API call to /getuser
+    
+How to create new user
+
+    Make an API call to /newuser
+    
+How to get the amount of NPTR a user can get for a swap
+
+    Make an API call to /swapamount
+    
+Usage of Test
+  start the server
+  node server.js
+  
+  go to the web browser and type in
+  
+  localhost:8000/test.html
+  
+  
+You can edit the test file in test/test.html
+  
