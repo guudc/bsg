@@ -1333,7 +1333,7 @@ function _copy(val) {
 	const log = localStorage.getItem("user_login") + ""
         if(log != 'true'){
             //navigate to dashboard
-            window.location = "./index.html"
+           // window.location = "./index.html"
         }
    setTimeout(function(){
        //connect to wallet automatically
