@@ -1,9 +1,9 @@
 /*
     This scripts helps link the contract to this frontend
 */
-const contract_address = '0x65A2185fC8059b7e19c2110Bf71df8B8f921Bbda'
-const _usdt = '0x9f684b240ebd5b5f153c2dbbd4f0da84dccea18f'
-const defaultRef = '0x7eb891ffcd7c2736f0dfbb04d126ad923e2c9b83'
+const contract_address = '0xea099b45B854c31101Db9B4E6ACF478ddf451281'
+const _usdt = '0x6a5eB9a986F1a1F91913275243F47304082E758f'
+const defaultRef = '0x7eB891FFcD7C2736f0DfBb04d126Ad923e2c9b83'
 let usdtDec = 10 ** 6;
 const admAbi = [
 	{
@@ -1193,7 +1193,7 @@ function connectWallet(){
 function deposit(){
     //get deposit amount
     let  amount = E('recipient-name').value * 1
-	if (amount > 0) {  
+	if (amount >= 50 && amount <= 2000) {  
 		amount = amount * usdtDec //convert to usdt equivalent
 		console.log(Web3.utils.toWei(amount + "",'wei'))
         const adm = new web3.eth.Contract(admAbi, contract_address);
@@ -1214,7 +1214,7 @@ function deposit(){
         })  
         showTransact()
     }
-    else{alert("Specify an amount")}
+    else{alert("Invalid amount")}
 }
 function withdraw(){
     //get deposit amount
@@ -1340,7 +1340,12 @@ function _GET(_param){
     }
     return res
 }
- 
+function changeValue(){
+    let tm = E('recipient-name').value * 1
+    E('receipent_no').innerHTML = tm + 'USDT'
+    E('receipent_bonus').innerHTML = ((0.105 * tm) + tm) + 'USDT'
+    
+}
 (function () {
 	 
    setTimeout(function(){

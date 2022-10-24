@@ -22,9 +22,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto ">
-        <li class="nav-item " style="cursor: pointer" onclick="connectWallet()">
-            <a class="nav-link" ><i class="fa fa-wallet"></i> <span id='cwallet'>Connect Wallet</span> <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item ">
           <a class="nav-link" href="dashboard.html"><i class="fa fa-dashcube"></i> Dashboard <span class="sr-only">(current)</span></a>
         </li>
@@ -348,7 +345,7 @@
               <div class="container">
                 <div class="row d-flex justify-content-between ">
                   <div class="form-group w-70">
-                    <input type="text" class="form-control" id="recipient-name" value="50">
+                    <input oninput="changeValue()" type="number" min='50' max="2000" class="form-control" id="recipient-name" value="50">
                     <label for="recipient-name" class="col-form-label">Minimum deposit 50USDT. A ratio of 50 max 2000
                     </label>
                   </div>
@@ -359,7 +356,7 @@
                 <div class="container cardgrid">
                   <div class=" d-flex justify-cotent-between ">
                     <div class="valuesubmit w-30">
-                      <h6 class="text-center">50USDT</h6>
+                      <h6 class="text-center" id='receipent_no'>USDT</h6>
                       <p class="text-center normal-text">Deposit</p>
                     </div>
                     <div class="cycle-value w-30">
@@ -367,7 +364,7 @@
                             <p class="text-center normal-text">Each cycle</p>
                     </div>
                     <div class="Deposit-value w-30">
-                      <h6 class="text-center">61.25USDT</h6>
+                      <h6 class="text-center" id='receipent_bonus'>USDT</h6>
                             <p class="text-center normal-text">Deposit + Bonus</p>
                     </div>
                   </div>
